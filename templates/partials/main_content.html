@@ -3,14 +3,18 @@
     <div class="formulario_transacao">
         <form action="" method="POST">
             {% csrf_token %}
-            {{form.titulo}}
-            {{form.recorrente}}
-            
-            {% if form.recorrente.value %}
-                {{form.meses}}
-            {% endif %}
-                
-            <input type="submit" value="Enviar">
+            <div class="formulario">
+              <div><label for="">Título: {{ form.titulo }}</label></div>
+              <div><label for="">Categoria: {{ form.categoria }}</label></div>
+              <div><label for="">Valor R$: {{ form.valor }}</label></div>
+              <div><label for="">Receita: {{ form.receita }}</label></div>
+              <div class="formulario_recorrencia">
+                <div><input type="button" id="show" value="Recorrente"></input></div>
+                <div><input type="button" id="hide" value="Não recorrente"></input></div>
+                <div><label for="" class="formulario_meses" style="display: none">Meses: {{ form.meses }}</label></div>
+              </div>
+            </div>
+            <input type="submit" value="Enviar" style="margin-top: 10px;">
         </form>
     </div>
 

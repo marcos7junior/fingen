@@ -1,5 +1,15 @@
-.main_content {
+.main_content, .formulario {
     display: flex;
     flex-direction: column;
     gap: 30px;
+}
+
+.formulario_recorrencia {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.tabela_resultados {
+    text-align: center;
 }

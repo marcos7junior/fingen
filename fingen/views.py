@@ -4,7 +4,7 @@ from fingen.forms import *
 
 
 def home(request):
-    transacoes = Transacao.objects.all()
+    transacoes = Transacao.objects.all().order_by('-data')
     
     query = request.GET.get("q")
     if query:
@@ -13,8 +13,6 @@ def home(request):
     if request.method == 'POST':
         form = TransacaoForm(request.POST)
         if form.is_valid():
-            # recorrente = form.cleaned_data.get('recorrente')
-            # meses = form.cleaned_data.get('meses')
             form.save()
             return redirect('fingen:home')
     else:
