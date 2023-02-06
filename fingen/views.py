@@ -3,6 +3,12 @@ from fingen.models import *
 from fingen.forms import *
 
 
+# def soma_receitas():
+    # receitas = Transacao.objects.filter
+    # print(receitas)
+
+# soma_receitas()
+
 def home(request):
     transacoes = Transacao.objects.all().order_by('-data')
     
